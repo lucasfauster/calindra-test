@@ -34,7 +34,7 @@ public class AddressController {
         } catch (InvalidAddressException e){
             return ResponseEntity.notFound().build();
         } catch (InvalidAddressesListSizeException e){
-            return ResponseEntity.badRequest().body("A lista de endereços deve conter três ou mais endereços!");
+            return ResponseEntity.badRequest().body("Invalid addresses list size. It should have three or more addresses!");
         }
 
         double[][] distances = GeometryUtils.getDistances(points);
