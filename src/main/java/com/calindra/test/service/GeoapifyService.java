@@ -2,22 +2,15 @@ package com.calindra.test.service;
 
 import com.calindra.test.exceptions.InvalidAddressException;
 import com.calindra.test.model.Feature;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.calindra.test.response.GeoapifyResponse;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.net.URI;
-import java.util.HashMap;
 import java.util.List;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Map;
 
 @Service
 public class GeoapifyService {
