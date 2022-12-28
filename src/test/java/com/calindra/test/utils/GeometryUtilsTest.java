@@ -1,6 +1,5 @@
 package com.calindra.test.utils;
 
-//import org.junit.jupiter.api.Test;
 import org.junit.Test;
 
 import java.awt.geom.Point2D;

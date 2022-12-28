@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.calindra.test.response.GeoapifyResponse;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.awt.geom.Point2D;
 import java.net.URI;
 import java.util.List;

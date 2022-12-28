@@ -1,6 +1,5 @@
 package com.calindra.test.controller;
 
-import ch.qos.logback.core.joran.sanity.Pair;
 import com.calindra.test.exceptions.InvalidAddressException;
 import com.calindra.test.exceptions.InvalidAddressesListSizeException;
 import com.calindra.test.model.Address;
@@ -10,9 +9,7 @@ import com.calindra.test.utils.GeometryUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

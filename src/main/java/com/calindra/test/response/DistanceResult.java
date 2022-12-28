@@ -1,7 +1,5 @@
 package com.calindra.test.response;
 
-import ch.qos.logback.core.joran.sanity.Pair;
-
 import java.util.List;
 
 public class DistanceResult {
