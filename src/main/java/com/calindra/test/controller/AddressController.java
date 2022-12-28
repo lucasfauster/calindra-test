@@ -2,6 +2,7 @@ package com.calindra.test.controller;
 
 import ch.qos.logback.core.joran.sanity.Pair;
 import com.calindra.test.exceptions.InvalidAddressException;
+import com.calindra.test.exceptions.InvalidAddressesListSizeException;
 import com.calindra.test.model.Address;
 import com.calindra.test.response.DistanceResult;
 import com.calindra.test.service.GeoapifyService;
@@ -24,14 +25,16 @@ public class AddressController {
         this.geoapifyService = geoapifyService;
     }
 
-    @PostMapping("/distance")
-    public ResponseEntity<DistanceResult> getDistance(@RequestBody Address addressList) {
+    @GetMapping("/distance")
+    public ResponseEntity getDistance(@RequestBody Address addressList) {
         List<Point2D.Double> points;
         List<String> addresses = addressList.getAddresses();
         try{
             points = geoapifyService.getCoordinates(addresses);
         } catch (InvalidAddressException e){
             return ResponseEntity.notFound().build();
+        } catch (InvalidAddressesListSizeException e){
+            return ResponseEntity.badRequest().body("A lista de endereços deve conter três ou mais endereços!");
         }
 
         double[][] distances = GeometryUtils.getDistances(points);

@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "35554c65-ebc2-430d-b272-9ee166218bee",
+		"name": "distances",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19037593"
+	},
+	"item": [
+		{
+			"name": "Office Distances",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"addresses\": [\"Av. Rio Branco, 1 Centro, Rio de Janeiro RJ, 20090003\", \"Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200\", \"Rua Mauro Muller 116, Botafogo, Rio de Janeiro,RJ, 22290160\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/calindra/distance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calindra",
+						"distance"
+					],
+					"query": [
+						{
+							"key": "addresses",
+							"value": "[\"Av. Rio Branco, 1 Centro, Rio de Janeiro RJ, 20090003\", \"Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200\", \"Rua Mauro Muller 116, Botafogo, Rio de Janeiro,RJ, 22290160\"]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

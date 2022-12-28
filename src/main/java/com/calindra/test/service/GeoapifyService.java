@@ -1,6 +1,7 @@
 package com.calindra.test.service;
 
 import com.calindra.test.exceptions.InvalidAddressException;
+import com.calindra.test.exceptions.InvalidAddressesListSizeException;
 import com.calindra.test.model.Feature;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -20,8 +21,11 @@ public class GeoapifyService {
     private final RestTemplate restTemplate = new RestTemplate();
 
 
-    public List<Point2D.Double> getCoordinates(List<String> addresses) throws InvalidAddressException {
+    public List<Point2D.Double> getCoordinates(List<String> addresses) throws InvalidAddressException, InvalidAddressesListSizeException {
         List<Point2D.Double> points = new ArrayList<>();
+        if(addresses.size() < 3){
+            throw new InvalidAddressesListSizeException("Invalid address list size. It should have three or more addresses.");
+        }
         for (String address : addresses) {
             URI targetUrl= UriComponentsBuilder.fromUriString(GEOCODING_API_URL)
                     .queryParam("apiKey", apiKey)
